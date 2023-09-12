@@ -1,0 +1,14 @@
+@import '../styles/_breakpoints'
+
+.home
+  @include mobOnly
+    background-image: url('../../public/home/background-home-mobile.jpg')
+    background-size: cover
+
+  @include vTabUp
+    background-image: url('../../public/home/background-home-tablet.jpg')
+    background-size: cover
+
+  @include desUp
+    background-image: url('../../public/home/background-home-desktop.jpg')
+    background-size: cover

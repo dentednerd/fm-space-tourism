@@ -1,10 +1,12 @@
 import Explore from '../components/atoms/explore';
-import Nav from '../components/organisms/nav';
+import Header from '../components/organisms/header';
+
+import styles from './Home.module.sass';
 
 export default function Home() {
   return (
-    <main>
-      <Nav />
+    <main className={styles.home}>
+      <Header />
 
       <h5>So, you want to travel to</h5>
       <h1>Space</h1>

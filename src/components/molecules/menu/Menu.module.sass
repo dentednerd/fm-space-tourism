@@ -1,0 +1,46 @@
+@import '../../../styles/variables'
+
+.menu
+  position: fixed
+  top: 0
+  right: 0
+  height: 100vh
+  width: 75%
+  background: rgba(255,255,255,0.04)
+  backdrop-filter: blur(24px)
+  display: flex
+  flex-flow: column nowrap
+  justify-content: flex-start
+  align-items: flex-start
+  transform: translateX(100%)
+  transition: transform .5s ease
+
+  &.open
+    right: 0
+    transform: translateX(0%)
+    transition: transform .5s ease
+
+  img
+    margin-left: auto
+
+  .list
+    display: block
+    width: 100%
+    text-align: left
+    list-style-type: none
+    margin: 32px 0 0 16px
+
+    li
+      display: block
+      text-transform: uppercase
+      font-size: 16px
+      letter-spacing: 4.75px
+      color: $white
+      font-weight: 100
+      margin: 16px 0
+
+    .bold
+      font-weight: 400
+
+    .light
+      font-weight: 100

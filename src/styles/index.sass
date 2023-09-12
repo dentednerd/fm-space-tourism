@@ -10,6 +10,17 @@ main
   flex-direction: column
   justify-content: space-between
   align-items: center
-  padding: 1rem
   min-height: 100vh
   text-align: center
+
+header
+  height: 96px
+  width: 100%
+  display: flex
+  flex-flow: row nowrap
+  justify-content: space-between
+  align-items: center
+  padding: 16px
+
+  @include desUp
+    margin: 16px 0 0 16px
