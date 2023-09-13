@@ -12,9 +12,9 @@ export default function Menu({ isMenuOpen, toggleIsMenuOpen }) {
       <ul className={styles.list}>
         {["Home"].concat(Object.keys(data)).map((name, i) => (
           <li key={name}>
-            <Link href="#">
-              <span className={styles.bold}>0{i} </span>
-              <span className={styles.light}>{name}</span>
+            <Link href={name === "Home" ? `/` : `/${name}`}>
+              <span className="fw700">0{i} </span>
+              <span>{name}</span>
             </Link>
           </li>
         ))}

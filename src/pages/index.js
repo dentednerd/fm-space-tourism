@@ -9,7 +9,7 @@ export default function Home() {
       <Header />
 
       <section>
-        <h5>So, you want to travel to</h5>
+        <h2>So, you want to travel to</h2>
       </section>
 
       <section>

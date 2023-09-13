@@ -1,0 +1,71 @@
+@import '../../styles/mixins'
+@import '../../styles/variables'
+
+.destinations
+  background-image: url('../../../public/destination/background-destination-mobile.jpg')
+  background-size: cover
+  grid-template-rows: 6rem 1rem 10.625rem 1.75rem auto
+  gap: 2rem
+
+  @include vTabUp
+    background-image: url('../../../public/destination/background-destination-tablet.jpg') !important
+
+  @include hTabUp
+    background-image: url('../../../public/destination/background-destination-desktop.jpg') !important
+
+  h1
+    @include bellefair
+    font-size: 3.5rem
+
+  h2
+    @include barlowcondensed
+    font-size: 1rem
+    font-weight: 400
+
+  .image img
+    aspect-ratio: 1
+    margin-inline: auto
+
+  .selector
+    display: flex
+    justify-content: center
+    gap: 1rem
+    height: 1.75rem
+
+    span
+      @include barlowcondensed
+      cursor: pointer
+      color: $blue
+      font-weight: 400
+
+      &:hover
+        border-bottom: solid $blue 0.1875rem
+
+  article
+    display: grid
+    gap: 2rem
+    grid-template-rows: 12.75rem 7rem
+
+    p
+      @include container
+      font-size: 0.9375rem
+      line-height: 1.5625rem
+
+    .bordertop
+      padding-top: 2rem !important
+      display: grid
+      gap: 2rem
+      border-top: solid 1px rgba($blue, 0.25)
+
+      .subproperty
+        @include barlowcondensed
+        font-size: 0.875rem
+        font-weight: 400
+        margin-bottom: 0.75rem
+
+      .subvalue
+        @include bellefair
+        font-size: 1.75rem
+
+.underline
+  border-bottom: solid $white 0.1875rem

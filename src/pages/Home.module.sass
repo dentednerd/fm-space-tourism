@@ -1,8 +1,18 @@
-@import '../styles/_breakpoints'
+@import '../styles/mixins'
+@import '../styles/mixins'
 
 .home
   background-image: url('../../public/home/background-home-mobile.jpg')
   background-size: cover
+  grid-template-rows: 6rem 1.125rem 6.25rem 12.5rem 10rem
+
+  h1
+    @include bellefair
+    font-size: 5rem
+
+  h2
+    @include barlowcondensed
+    font-size: 1rem
 
   @include vTabUp
     background-image: url('../../public/home/background-home-tablet.jpg') !important
