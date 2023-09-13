@@ -6,12 +6,15 @@
 @import 'variables'
 
 main
-  display: flex
-  flex-direction: column
-  justify-content: space-between
-  align-items: center
+  display: grid
+  gap: 1rem
+  grid-template-rows: 6rem 1.125rem 6.25rem 12.5rem 10rem
   min-height: 100vh
   text-align: center
+
+  section
+    margin: 0 1rem
+    padding: 0 !important
 
 header
   height: 96px
