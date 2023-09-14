@@ -20,31 +20,31 @@ export default function Destinations() {
       </section>
 
       <section className={styles.image}>
-        <Image src={current.images.png} alt={current.name} width={170} height={170} />
+        <Image src={current.images.png} alt={current.name} fill={true} />
       </section>
 
       <nav className={styles.selector}>
         {names.map((name, i) => (
-          <span key={name} className={index === i && styles.underline} onClick={() => setIndex(i)}>{name}</span>
+          <span key={name} className={index === i && styles.active} onClick={() => setIndex(i)}>{name}</span>
         ))}
       </nav>
 
-      <article>
+      <article className={styles.destibio}>
 
         <section>
-          <h1>{current.name}</h1>
-          <p>{current.description}</p>
+          <h1 className={styles.name}>{current.name}</h1>
+          <p className={styles.description}>{current.description}</p>
         </section>
 
-        <section className={styles.bordertop}>
+        <section className={styles.statistics}>
           <section>
-            <p className={styles.subproperty}>Avg. Distance</p>
-            <p className={styles.subvalue}>{current.distance}</p>
+            <p className={styles.property}>Avg. Distance</p>
+            <p className={styles.value}>{current.distance}</p>
           </section>
 
           <section>
-            <p className={styles.subproperty}>Est. Travel Time</p>
-            <p className={styles.subvalue}>{current.travel}</p>
+            <p className={styles.property}>Est. Travel Time</p>
+            <p className={styles.value}>{current.travel}</p>
           </section>
         </section>
 

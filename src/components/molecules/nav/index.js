@@ -8,7 +8,7 @@ export default function Nav() {
       <ul>
         {["Home"].concat(Object.keys(data)).map(name => (
           <li key={name}>
-            <Link href="#">
+            <Link href={name === "Home" ? `/` : `/${name}`}>
               {name}
             </Link>
           </li>
