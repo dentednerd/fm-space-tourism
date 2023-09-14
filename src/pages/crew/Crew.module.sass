@@ -4,8 +4,16 @@
 .crew
   background-image: url('../../../public/crew/background-crew-mobile.jpg')
   background-size: cover
-  grid-template-rows: 6rem 1.5rem 14rem 1rem 1.5rem auto
+  grid-template-rows: 6rem 1.5rem 14rem 1.5rem auto 1rem
   gap: 1.5rem
+
+  @include vTabUp
+    background-image: url('../../../public/crew/background-crew-tablet.jpg')
+    width: 100vw
+    height: 100vh !important
+    grid-template-rows: 6rem 1.5rem 12rem 1rem auto
+
+/* image */
 
 .image
   display: flex
@@ -15,33 +23,56 @@
   margin: 0 1rem
   aspect-ratio: 2 / 1
   border-bottom: solid 1px rgba($blue, 0.25)
+  position: relative
+
+  @include vTabUp
+    order: 5
+    height: 100%
+    width: 100%
 
   img
     object-fit: contain
+
+/* text */
+
+.article
+  display: grid
+  gap: 0.5rem
+  grid-template-rows: 1.5rem 2.5rem auto
+  max-width: 100vw !important
+  padding-inline: 1rem
+
+  @include vTabUp
+    width: auto
+    margin-inline: auto
 
 .role
   @include bellefair
   font-size: 1rem
   opacity: 0.5
 
+  @include vTabUp
+    font-size: 1.5rem
+
 .name
   @include bellefair
   font-size: 1.5rem
 
+  @include vTabUp
+    font-size: 2.5rem
+
 .bio
   padding-inline: 1rem
-  max-width: 100vw !important
+  font-size: 0.9375rem
+  line-height: 1.5625rem
 
-.article
-  display: grid
-  gap: 0.5rem
-  grid-template-rows: 1rem 1.5rem auto
-  max-width: 100vw !important
-  padding-inline: 1rem
+  @include vTabUp
+    width: auto
+    height: 5.25rem
+    font-size: 1rem
+    line-height: 1.75rem !important
 
-  p
-    font-size: 0.9375rem
-    line-height: 1.5625rem
+/* nav buttons */
 
 .crewnav
   display: flex
@@ -49,6 +80,9 @@
   justify-content: center
   align-items: center
   gap: 1rem
+
+  @include vTabUp
+    order: 4
 
 .active
   opacity: 1

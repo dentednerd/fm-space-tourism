@@ -12,7 +12,7 @@ export default function Crew() {
 
   const dots = [0,1,2,3].map((i) => (
     <Dot key={i} className={i === index && styles.active} onClick={() => setIndex(i)} />
-  ))
+  ));
 
   return (
     <main className={styles.crew}>
@@ -23,7 +23,7 @@ export default function Crew() {
       </section>
 
       <section className={styles.image}>
-        <Image src={current.images.webp} alt={current.name} width={224} height={224} />
+        <Image src={current.images.webp} alt={current.name} fill={true} />
       </section>
 
       <nav className={styles.crewnav}>
@@ -35,7 +35,7 @@ export default function Crew() {
 
         <h1 className={styles.name}>{current.name}</h1>
 
-        <p className="bio">{current.bio}</p>
+        <p className={styles.bio}>{current.bio}</p>
       </article>
 
     </main>
