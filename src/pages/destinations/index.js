@@ -16,7 +16,7 @@ export default function Destinations() {
       <Header/ >
 
       <section>
-        <h2><span className="fw-700 translucent">01</span> Pick Your Destination</h2>
+        <h2 className="page-heading"><span>01</span> Pick Your Destination</h2>
       </section>
 
       <section className={styles.image}>
