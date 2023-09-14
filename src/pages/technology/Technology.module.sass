@@ -1,0 +1,52 @@
+@import '../../styles/mixins'
+@import '../../styles/variables'
+
+.technology
+  background-image: url('../../../public/technology/background-technology-mobile.jpg')
+  background-size: cover
+  grid-template-rows: 6rem 1rem 211px 2.5rem auto
+  gap: 2rem
+
+  .image
+    width: 100vw
+    aspect-ratio: 16 / 9
+
+    img
+      object-fit: fill
+
+  h1
+    @include bellefair
+    font-size: 1.5rem
+
+  h2
+    @include barlowcondensed
+    font-size: 1rem
+    font-weight: 400
+
+  h3
+    @include barlowcondensed
+    font-size: 0.875rem
+
+  .techarticle
+    display: grid
+    grid-template-rows: 1rem 1.5rem auto
+    gap: 1rem
+
+    p
+      padding-inline: 1rem
+
+  .technav
+    display: flex
+    flex-flow: row nowrap
+    justify-content: center
+    align-items: center
+    gap: 1rem
+
+  .active
+    color: $black
+    background-color: $white
+    transition: all 0.2 ease
+
+    &:hover
+      color: $black
+      background-color: $white
