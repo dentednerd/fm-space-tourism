@@ -4,9 +4,10 @@
 .nav
   display: none
 
-  @include vTabUp
+  @include smUp
     display: flex
     flex-flow: row nowrap
+    justify-content: center
     align-items: center
     gap: 2.5rem
     height: 6rem
@@ -14,18 +15,35 @@
     background: rgba(255, 255, 255, 0.04)
     backdrop-filter: blur(40px)
 
-  a
-    @include barlowcondensed
-    display: grid
-    place-items: center
-    box-sizing: content-box
-    height: 100%
-    font-size: 0.875rem
-    border-bottom: solid 3px rgba($white, 0)
+  @include lgUp
+    width: 51.875rem
+    padding: 0 4.5rem 0 2.5rem
+    gap: 3.5rem
 
-    &:hover
-      border-bottom: solid 3px $white
+.link
+  @include barlowcondensed
+  display: grid
+  place-items: center
+  box-sizing: content-box
+  height: calc(100% - 3px)
+  font-size: 0.875rem
+  border-bottom: solid 3px rgba($white, 0)
+  transition: border-bottom 0.25s ease
 
-    &:active
-      border-bottom: solid 3px $white
+  &:hover
+    border-bottom: solid 3px $white
+    transition: border-bottom 0.25s ease
+
+.active
+  border-bottom: solid 3px $white
+  transition: border-bottom 0.25s ease
+
+.number
+  display: none
+
+  @include lgUp
+    display: inline
+    font-weight: 700
+
+
 

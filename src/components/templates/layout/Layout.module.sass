@@ -1,0 +1,34 @@
+@import '../../../styles/mixins'
+
+.layout
+  display: grid
+  gap: 1rem
+  grid-template-rows: 6rem 1.5rem 1fr
+  height: 100vh
+  text-align: center
+
+.heading
+  @include barlowcondensed
+  font-size: 1rem
+  font-weight: 400
+  max-width: 100vw !important
+
+  span
+    font-weight: 700
+    opacity: 0.25
+
+  @include smUp
+    text-align: left
+    margin-left: 2rem
+    font-size: 1.25rem
+    letter-spacing: 0.2rem
+
+  @include lgUp
+    margin: 4.75rem 0 0 10rem
+
+.main
+  @include smUp
+    margin-left: 2rem
+
+  @include lgUp
+    margin-left: 10rem

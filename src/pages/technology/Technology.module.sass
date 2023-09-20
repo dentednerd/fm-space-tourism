@@ -1,52 +1,128 @@
 @import '../../styles/mixins'
 @import '../../styles/variables'
 
-.technology
+.techbg
   background-image: url('../../../public/technology/background-technology-mobile.jpg')
   background-size: cover
-  grid-template-rows: 6rem 1rem 211px 2.5rem auto
-  gap: 2rem
 
-  .image
-    width: 100vw
-    aspect-ratio: 16 / 9
+  @include smUp
+    background-image: url('../../../public/technology/background-technology-tablet.jpg')
 
-    img
-      object-fit: fill
+  @include lgUp
+    background-image: url('../../../public/technology/background-technology-desktop.jpg')
 
-  h1
-    @include bellefair
-    font-size: 1.5rem
-
-  h2
-    @include barlowcondensed
-    font-size: 1rem
-    font-weight: 400
-
-  h3
-    @include barlowcondensed
-    font-size: 0.875rem
-
-  .techarticle
+.techcontent
+  @include lgUp
     display: grid
-    grid-template-rows: 1rem 1.5rem auto
-    gap: 1rem
+    grid-template-rows: 1fr
+    grid-template-columns: 5rem 1fr 32rem
+    gap: 5rem
+    place-items: center flex-start
+    width: calc(100vw - 10rem)
+    height: 100%
 
-    p
-      padding-inline: 1rem
+.image
+  margin-bottom: 2rem
 
-  .technav
-    display: flex
-    flex-flow: row nowrap
-    justify-content: center
-    align-items: center
-    gap: 1rem
+  @include smUp
+    transform: translateX(-2rem)
+    width: 100vw
 
-  .active
+  @include lgUp
+    transform: none
+    order: 3
+    margin-bottom: 0
+    width: 100%
+    aspect-ratio: 1
+
+.landscape
+  position: relative
+  width: 100% !important
+  aspect-ratio: 16 / 9
+
+  img
+    object-fit: cover
+
+  @include lgUp
+    display: none
+
+.portrait
+  display: none
+
+  @include lgUp
+    display: block
+    position: relative
+    aspect-ratio: 1
+
+.technav
+  display: flex
+  flex-flow: row nowrap
+  justify-content: center
+  align-items: center
+  gap: 1rem
+  margin-bottom: 2rem
+
+  @include smUp
+    width: 100vw
+    transform: translateX(-2rem)
+
+  @include lgUp
+    order: 1
+    transform: none
+    flex-flow: column nowrap
+    width: 5rem
+    gap: 2rem
+    margin: 0
+
+.active
+  color: $black
+  background-color: $white
+  transition: all 0.2 ease
+
+  &:hover
     color: $black
     background-color: $white
-    transition: all 0.2 ease
 
-    &:hover
-      color: $black
-      background-color: $white
+.techarticle
+  display: grid
+  grid-template-rows: 1.3125rem 2rem auto
+  margin: 0 2rem 2rem
+  gap: 1rem
+
+  @include smUp
+    transform: translateX(-2rem)
+    width: 28.625rem
+    margin-inline: auto
+
+  @include lgUp
+    width: 100%
+    transform: none
+    text-align: left
+    order: 2
+
+.title
+  @include bellefair
+  font-size: 1.5rem
+
+  @include smUp
+    font-size: 2.5rem
+
+.terminology
+  @include barlowcondensed
+  font-size: 0.875rem
+  color: $blue
+
+  @include smUp
+    font-size: 1rem
+
+.description
+  font-size: 0.9375rem
+  line-height: 1.5625rem
+  color: $blue
+
+  @include smUp
+    font-size: 1rem
+    line-height: 1.75rem
+
+  @include lgUp
+

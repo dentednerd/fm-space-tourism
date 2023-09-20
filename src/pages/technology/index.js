@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import Header from '../../components/organisms/header';
+import Layout from '../../components/templates/layout';
 import Number from '../../components/atoms/number';
 import data from '../../data/data.json';
 import styles from "./Technology.module.sass";
@@ -15,26 +15,42 @@ export default function Technology() {
   ))
 
   return (
-    <main className={styles.technology}>
-      <Header/ >
+    <Layout className={styles.techbg} heading="03 Space Launch 101">
 
-      <section>
-        <h2 className="page-heading"><span>03</span> Space Launch 101</h2>
+      <section className={styles.techcontent}>
+
+        <section className={styles.image}>
+          <div className={styles.landscape}>
+            <Image src={current.images.landscape} alt={current.name} fill={true} />
+          </div>
+
+          <div className={styles.portrait}>
+            <Image src={current.images.portrait} alt={current.name} fill={true} />
+          </div>
+        </section>
+
+        <nav className={styles.technav}>
+            {numDots}
+          </nav>
+
+        <article className={styles.techarticle}>
+
+          <h3 className={styles.terminology}>
+            The Terminology...
+          </h3>
+
+          <h1 className={styles.title}>
+            {current.name}
+          </h1>
+
+          <p className={styles.description}>
+            {current.description}
+          </p>
+
+        </article>
+
       </section>
 
-      <div className={styles.image}>
-        <Image src={current.images.landscape} alt={current.name} width={375} height={211}/>
-      </div>
-
-      <nav className={styles.technav}>
-        {numDots}
-      </nav>
-
-      <article className={styles.techarticle}>
-        <h3>The Terminology...</h3>
-        <h1>{current.name}</h1>
-        <p>{current.description}</p>
-      </article>
-    </main>
+    </Layout>
   );
 }

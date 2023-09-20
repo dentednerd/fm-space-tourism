@@ -17,29 +17,10 @@
   font-family: $barlow
   color: $blue
 
-@mixin mobOnly
-  @media only screen and (max-width: $smBreakpoint - 1)
+@mixin smUp
+  @media only screen and (min-width: 768px)
     @content
 
-@mixin vTabUp
-  @media only screen and (min-width: $smBreakpoint)
+@mixin lgUp
+  @media only screen and (min-width: 1280px)
     @content
-
-@mixin hTabUp
-  @media only screen and (min-width: $mdBreakpoint)
-    @content
-
-@mixin desUp
-  @media only screen and (min-width: $lgBreakpoint)
-    @content
-
-// .sr-only
-//   position: absolute
-//   width: 1px
-//   height: 1px
-//   padding: 0
-//   margin: -1px
-//   overflow: hidden
-//   clip: rect(0, 0, 0, 0)
-//   white-space: nowrap
-//   border: 0

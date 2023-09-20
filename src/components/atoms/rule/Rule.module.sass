@@ -1,0 +1,15 @@
+@import '../../../styles/mixins'
+@import '../../../styles/variables'
+
+.rule
+  display: none
+
+  @include lgUp
+    display: block
+    height: 0.0625rem
+    width: 50vw
+    background: $white
+    opacity: 0.2515
+    transform: translateX(2.5rem)
+    z-index: 999
+

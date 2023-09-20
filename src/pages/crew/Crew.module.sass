@@ -4,75 +4,53 @@
 .crew
   background-image: url('../../../public/crew/background-crew-mobile.jpg')
   background-size: cover
-  grid-template-rows: 6rem 1.5rem 14rem 1.5rem auto 1rem
-  gap: 1.5rem
 
-  @include vTabUp
+  @include smUp
     background-image: url('../../../public/crew/background-crew-tablet.jpg')
-    width: 100vw
-    height: 100vh !important
-    grid-template-rows: 6rem 1.5rem 12rem 1rem auto
 
-/* image */
+  @include lgUp
+    background-image: url('../../../public/crew/background-crew-desktop.jpg')
+
+.crewcontent
+  @include smUp
+    display: flex
+    flex-flow: column nowrap
+    align-items: center
+    gap: 2.5rem
+    width: 38rem
+    height: calc(100vh - 9.5rem)
+    margin-inline: auto
+
+  @include lgUp
+    display: grid
+    grid-template-rows: 1fr
+    grid-template-columns: repeat(2, 1fr)
+    place-items: center flex-start
+    width: calc(100vw - 10rem)
+    height: calc(100vh - 9.5rem)
+    text-align: left
 
 .image
-  display: flex
-  justify-content: center
-  align-items: flex-end
+  position: relative
   width: calc(100vw - 2rem)
-  margin: 0 1rem
+  margin: 0 1rem 2rem
   aspect-ratio: 2 / 1
   border-bottom: solid 1px rgba($blue, 0.25)
-  position: relative
 
-  @include vTabUp
-    order: 5
+  @include smUp
+    order: 3
     height: 100%
     width: 100%
+    margin: 0
+
+  @include lgUp
+    grid-area: 1 / 2 / 2 / 3
 
   img
     object-fit: contain
 
-/* text */
-
-.article
-  display: grid
-  gap: 0.5rem
-  grid-template-rows: 1.5rem 2.5rem auto
-  max-width: 100vw !important
-  padding-inline: 1rem
-
-  @include vTabUp
-    width: auto
-    margin-inline: auto
-
-.role
-  @include bellefair
-  font-size: 1rem
-  opacity: 0.5
-
-  @include vTabUp
-    font-size: 1.5rem
-
-.name
-  @include bellefair
-  font-size: 1.5rem
-
-  @include vTabUp
-    font-size: 2.5rem
-
-.bio
-  padding-inline: 1rem
-  font-size: 0.9375rem
-  line-height: 1.5625rem
-
-  @include vTabUp
-    width: auto
-    height: 5.25rem
-    font-size: 1rem
-    line-height: 1.75rem !important
-
-/* nav buttons */
+    @include lgUp
+      object-position: left bottom
 
 .crewnav
   display: flex
@@ -80,9 +58,17 @@
   justify-content: center
   align-items: center
   gap: 1rem
+  margin-bottom: 2rem
 
-  @include vTabUp
-    order: 4
+  @include smUp
+    order: 2
+
+  @include lgUp
+    justify-content: flex-start
+    grid-area: 1 / 1 / 2 / 2
+    order: 2
+    align-self: flex-end
+    gap: 2rem
 
 .active
   opacity: 1
@@ -90,3 +76,55 @@
 
   &:hover
     opacity: 1
+
+.article
+  display: grid
+  gap: 0.5rem
+  grid-template-rows: 1.5rem 2.5rem auto
+  padding-inline: 1rem
+
+  @include smUp
+    padding: 0
+    grid-template-rows: 1.5rem 2.5rem auto
+    height: min-content
+    order: 1
+
+  @include lgUp
+    grid-area: 1 / 1 / 2 / 2
+    gap: 2rem
+    order: 1
+
+.role
+  @include bellefair
+  font-size: 1rem
+  opacity: 0.5
+
+  @include smUp
+    font-size: 1.5rem
+
+  @include lgUp
+    font-size: 2rem
+
+.name
+  @include bellefair
+  font-size: 1.5rem
+
+  @include smUp
+    font-size: 2.5rem
+
+  @include lgUp
+    font-size: 3.25rem
+
+.bio
+  font-size: 0.9375rem
+  line-height: 1.5625rem
+
+  @include smUp
+    font-size: 1rem
+    line-height: 1.75rem
+
+  @include lgUp
+    font-size: 1.125rem
+    line-height: 2rem
+
+

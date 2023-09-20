@@ -1,3 +1,4 @@
+@import '../../../styles/mixins'
 @import '../../../styles/variables'
 
 .explore
@@ -5,10 +6,32 @@
   place-items: center
   width: 10rem
   aspect-ratio: 1
-  background-color: $white
   color: $black
   margin-inline: auto
   border-radius: 50%
-  font-family: $bellefair
-  font-size: 1.5rem
-  text-transform: uppercase
+  background: rgba($white, 0)
+
+  span
+    display: grid
+    place-items: center
+    width: 10rem
+    aspect-ratio: 1
+    background-color: $white
+    color: $black
+    border-radius: 50%
+    font-family: $bellefair
+    font-size: 1.5rem
+    text-transform: uppercase
+
+
+  @include lgUp
+    width: 22.125rem
+    transition: all 0.2s ease
+
+    span
+      width: 17.125rem
+      font-size: 2rem
+
+    &:hover
+      background: rgba($white, 0.1)
+      transition: all 0.25s ease

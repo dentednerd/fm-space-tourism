@@ -1,22 +1,76 @@
 @import '../styles/mixins'
-@import '../styles/mixins'
+@import '../styles/variables'
 
 .home
   background-image: url('../../public/home/background-home-mobile.jpg')
   background-size: cover
-  grid-template-rows: 6rem 1.125rem 6.25rem 12.5rem 10rem
+  height: 100vh
 
-  h1
-    @include bellefair
-    font-size: 5rem
+  @include smUp
+    background-image: url('../../public/home/background-home-tablet.jpg')
 
-  h2
-    @include barlowcondensed
-    font-size: 1rem
+  @include lgUp
+    background-image: url('../../public/home/background-home-desktop.jpg')
 
-  @include vTabUp
-    background-image: url('../../public/home/background-home-tablet.jpg') !important
+.homecontent
+  @include lgUp
+    display: flex
+    flex-flow: row nowrap
+    align-items: center
+    height: calc(100vh - 8rem)
 
-  @include hTabUp
-    background-image: url('../../public/home/background-home-desktop.jpg') !important
+.article
+  display: grid
+  grid-template-rows: 1rem 5rem auto
+  gap: 1rem
+  text-align: center
+  margin: 3rem 2rem
+
+  @include smUp
+    grid-template-rows: 1.25rem 9.375rem auto
+    width: 27.75rem
+    margin-inline: auto
+    margin-top: 6.63rem
+    gap: 1.5rem
+
+  @include lgUp
+    margin: 0 0 0 4rem
+    grid-template-rows: 1.75rem 8rem auto
+    text-align: left
+    height: min-content
+
+.subtitle
+  @include barlowcondensed
+  font-size: 1rem
+  letter-spacing: 0.175rem
+  color: $blue
+  text-transform: uppercase
+
+  @include smUp
+    font-size: 1.25rem
+    letter-spacing: 0.2rem
+    line-height: normal
+
+  @include lgUp
+    font-size: 1.75rem
+    letter-spacing: 0.3rem
+
+.title
+  @include bellefair
+  font-size: 5rem
+  padding: 0
+  margin: 0
+
+  @include smUp
+    font-size: 9.375rem
+    line-height: 1
+
+.text
+  @include barlow
+  font-size: 1rem
+  line-height: 1.5625rem
+  color: $blue
+
+  @include smUp
+    line-height: 1.75rem
 
