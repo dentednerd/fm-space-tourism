@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://fm-space-tourism-eight.vercel.app/](https://fm-space-tourism-eight.vercel.app/)
 
 ## My process
 
